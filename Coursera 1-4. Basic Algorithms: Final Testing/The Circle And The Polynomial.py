@@ -1,26 +1,15 @@
 cx, cy, cd = input().split()
 cx = float(cx); cy = float(cy); cd = float(cd); r = cd;
 n = int(input()); coef = input().split(); z = float(input());
-dif_coef = [0]*n
 
 for i in range(n+1):
 	coef[i] = float(coef[i])
-	
-for i in range(0, n):
-	dif_coef[i] = coef[i]*(n-i)
 
 def f_eval(x):
 	ans = 0
 	for i in range(0, n+1):
 		ans += coef[i]*(x**(n-i))
 	return ans
-
-def dif_eval(x):
-	ans = 0
-	for i in range(0, n):
-		ans += dif_coef[i]*(x**(n-i-1))
-	return ans
-
 
 lo = cx - r - 10
 hi = cx + r + 10
